@@ -1,17 +1,18 @@
 #include <stdio.h>
 
 int main() {
-  char Name[ 50 ] ;
-  int Age = 0 ;
-  
-  printf( "Enter your name : "
-  scanf( "%s", Name ) ;
-  printf( "Enter your age : "
-  scanf( "%d", &Age ) ;
-  printf( "------\n" ) ;
-  printf( "Hello %s \n", Name ) ;
-  printf( "Age = %d \n", Age ) ;
+    char name[ 50 ] ;
+    int age ;
 
-  return 0 ;
+    printf( "Enter your name: " ) ;
+    scanf( "%49s", name ) ;
+    printf( "Enter your age: " ) ;
+    scanf( "%d", &age ) ;
+
+    printf( "- - - - - -\n" ) ;
+    printf( "Hello %s\n", name ) ;
+    printf( "Age = %d\n", age ) ;
+
+    return 0 ;
 
 }//end function
