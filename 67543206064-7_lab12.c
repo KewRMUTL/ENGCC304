@@ -23,11 +23,11 @@ void data() {
         printf( "Enter the details of Student %d:\n" , i + 1 ) ;
         printf( "Name: " ) ;
 
-        fgets( STD[i].Name , 20 , stdin ) ;
-        STD[i].Name[ strcspn( STD[i].Name , "\n") ] = 0 ;
+        fgets( STD[ i ].Name , 20 , stdin ) ;
+        STD[ i ].Name[ strcspn( STD[ i ].Name , "\n" ) ] = 0 ;
         
-        printf("ID: " ) ;
-        scanf( "%s" , STD[  ].ID ) ;
+        printf( "ID: " ) ;
+        scanf( "%s" , STD[ i ].ID ) ;
 
         for ( int j = 0 ; j < 5 ; j++ ) {
             printf( "Scores in Subject %d: " , j + 1 ) ;
@@ -76,7 +76,7 @@ void Grade() {
     }//end for หาค่าเฉลี่ย
     printf( "\n" ) ;
     printf( "Average Scores: %.1f" , Average / 5 ) ;
-    printf( "\n\n") ;
+    printf( "\n\n" ) ;
 
 
     }//end funtion Grade
