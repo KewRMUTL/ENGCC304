@@ -5,17 +5,16 @@ int isPrime( int num ) { if( num < 2 ) return 0 ;
     for ( int i = 2 ; i <= sqrt( num ) ; i++ ) {
     if ( num % i == 0 )
     return 0 ; 
-}//end function isPrime
+}//end function
     return 1 ; }
-
-int main() {
+  int main() {
     int n ;
     printf( "Enter N : " ) ; 
     scanf( "%d", &n ) ;
     int arr[ n ] ; for( int i = 0 ; i < n ; i++ ){
         printf( "Enter value[%d] : ", i ) ;
         scanf("%d", &arr[i] ) ;
-    }//end for
+    }//end function
     printf("Index:  ") ;
     for (int i = 0 ; i < n ; i++ ){
         printf( "%2d ", i ) ;
@@ -29,4 +28,4 @@ int main() {
     }//end if
     printf( "\n" ) ;
     return 0 ;
-}//end function main
+  }//end function
