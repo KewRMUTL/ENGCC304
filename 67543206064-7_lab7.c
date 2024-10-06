@@ -1,61 +1,48 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdlib.h>  //เรียก Libary ของ Random
+#include <time.h>//เรียก Libary ของ time
 
 int main() {
+    srand( time(NULL) ) ;
+    int num = 0 , score = 100 ;
+    int front = 0 , back = 100 ;
 
-    int play ;
-    int playAgain ;
+    printf ( "Do you want to play game (1=play, -1=exit) : (Score=%d)\n" , score ) ;
+    scanf( "%d" , &num ) ;
 
-    printf( "Do you want to play game (1=play, -1=exit) : (Score=100)\n" ) ;
-    scanf( "%d", &play ) ;
 
-    if( play == 1 ) {
-        do {
-            int number ;
-            int guess ;
-            int score = 100 ;
-            int min = 1 ;
-            int max = 100 ;
-
-            number = rand() % 100 + 1 ;
-            srand( time( NULL ) ) ;
-
-            while( score > 0  ) {
-                printf( "Guess the winning number (%d-%d): ", min , max ) ;
-                scanf( "%d", &guess ) ;
-                if( guess < 1 && guess > 100 ) {
-                    printf( "Your guess is out of the current bounds (%d-%d)! Try again. \n", min , max ) ;
-                    continue ;
-                }
-
-                if( guess == number ) {
-                    printf( "That is correct! The winning number is %d.\n", guess ) ;
-                    printf( "Score this game: %d\n", score ) ;
-                    break ;
-                } else {
-                    score -= 10 ;
-                    if( score <= 0 ) {
-                        printf( "Your point are all gone \n" ) ;
-                        printf( "The correct number is : %d. \n", number ) ;
+    while ( 1 ) { //ใช้กำหนดว่าจะเล่นอีกรอบ
+        score = 100 , front = 1 , back = 100 ; // รีเซ็ตค่า
+        int Random = 42 ;
+        if ( num == 1 ) { //กำหนดเริ่มเกม
+            while ( 1 ) {
+                printf( "Guess the winning number (%d-%d): " , front , back ) ;
+                scanf( "%d" , &num ) ;
+                    if ( num < front || num > back ) { 
+                        printf( "Your guess is out of the current bounds (%d-%d)! Try again.\n" , front , back ) ;
+                        if ( score < 0 ) score = 0 ;
+                    } else if ( num < Random ) {
+                        front = num + 1 ;
+                        score -= 10 ;
+                        if ( score < 0 ) score = 0 ;
+                        printf( "Sorry, the winning number is HIGHER than %d." , num ) ;
+                        printf( " (Score=%d)\n" , score ) ;
+                    } else if ( num > Random ) {
+                        back = num - 1 ;
+                        score -= 10;
+                        if ( score < 0 ) score = 0 ;
+                        printf( "Sorry, the winning number is LOWER than %d.", num ) ;
+                        printf( " (Score=%d)\n" , score ) ;
+                    } else if ( num == Random ) {
+                        printf( "That is correct! The winning number is %d.\nScore this game: %d\n"  , Random , score) ;
                         break ;
-                    }
-                    if( guess < number ) {
-                        if( guess > min ) {
-                            min = guess + 1 ;
-                        }
-                        printf( "Sorry, the winning number is HIGHER than %d. (Score=%d) \n", guess , score ) ;
-                    } else {
-                        if( guess < max ) {
-                            max = guess -1 ;
-                        }
-                        printf( "Sorry, the winning number is LOWER than %d. (Score=%d)\n", guess , score ) ;
-                    }
-                }
-            }
-            printf( "Do you want to play game (1=play, -1=exit) : \n" ) ;
-            scanf( "%d", &playAgain ) ;
-        }while( playAgain == 1 ) ;
-    } 
+                    }//end if
+        }//end while 
+        printf ( "Do you want to play game (1=play, -1=exit) :\n" ) ;
+        scanf( "%d" , &num ) ; 
+        }else { //ใช้กำหนดว่าจะไม่เล่น
+            exit (0) ;
+        }//end if
+    }//end while เริ่มใหม่
     return 0 ;
-}
+}//end main function
