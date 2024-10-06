@@ -1,33 +1,14 @@
-#include <stdio.h>
-
-int main() {
-    char name[ 50 ] ;
-    int age ;
-    
-    printf( "Enter your name: " ) ;
-    scanf( "%s", name ) ;
-    
-    printf("Enter your age: " ) ;
-    scanf("%d", &age ) ;
-    
-    printf( "- - - - - -\n" ) ;
-    printf( "Hello %s\n", name ) ;
-    printf( "Age = %d\n", age ) ;
-    
-    return 0 ;
-}//end function
-
 #include <stduio.h>
 
 int main() {
-    char name[ 50 ] ;
-    int age ;
-    printf( "Enter your name: " ) 
-    scanf( "%s", name ) ;
+    char Name[ 50 ] ;
+    int Age = 0 ;
+    printf( "Enter your name: " ) ;
+    scanf( "%s", &Name ) ;
     printf( "Enter your age: " ) ;
-    scanf( "%d", &age ) ;
+    scanf( "%d", &Age ) ;
     print( "- - - - - -\n" ) ;
-    printf( "Hello %s \n", name ) ;
-    printf( "Age = %d\n", age ) ;
+    printf( "Hello %s \n", Name ) ; //TODO: #14 Say hello to user.
+    printf( "Age = %d\n", Age ) ; //TODO: #15 display user their age number plus 1.
     
-}//end function
+}//end main function
