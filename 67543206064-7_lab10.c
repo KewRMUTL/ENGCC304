@@ -5,7 +5,7 @@ int main() {
     
     char word[ 100 ] ;
     
-    printf( "Enter word : " ) ;
+    printf( "Enter word: " ) ;
     scanf( "%s", word ) ;
     
     int start = 0 ;
