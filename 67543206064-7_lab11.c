@@ -7,7 +7,7 @@ int main() {
     
     int num ;
     
-    printf( "Enter Number : " ) ;
+    printf( "Enter Number: " ) ;
     scanf( "%d", &num ) ;
 
     if ( isArms( num ) ) {
