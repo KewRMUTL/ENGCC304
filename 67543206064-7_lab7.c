@@ -27,7 +27,7 @@ int main() {
                 if( guess < 1 && guess > 100 ) {
                     printf( "Your guess is out of the current bounds (%d-%d)! Try again. \n", min , max ) ;
                     continue ;
-                }//end if
+                }
 
                 if( guess == number ) {
                     printf( "That is correct! The winning number is %d.\n", guess ) ;
@@ -39,25 +39,23 @@ int main() {
                         printf( "Your point are all gone \n" ) ;
                         printf( "The correct number is : %d. \n", number ) ;
                         break ;
-                    }//end if
-                    
+                    }
                     if( guess < number ) {
                         if( guess > min ) {
                             min = guess + 1 ;
-                        }//end if
-                        
+                        }
                         printf( "Sorry, the winning number is HIGHER than %d. (Score=%d) \n", guess , score ) ;
                     } else {
                         if( guess < max ) {
                             max = guess -1 ;
-                        }//end if
+                        }
                         printf( "Sorry, the winning number is LOWER than %d. (Score=%d)\n", guess , score ) ;
-                    }//end if
-                }//end if
-            }//end while
+                    }
+                }
+            }
             printf( "Do you want to play game (1=play, -1=exit) : \n" ) ;
             scanf( "%d", &playAgain ) ;
         }while( playAgain == 1 ) ;
-    }//end if
+    } 
     return 0 ;
-}//end function
+}
