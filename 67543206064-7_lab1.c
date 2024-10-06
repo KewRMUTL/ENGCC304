@@ -1,4 +1,4 @@
-#include <stduio.h>
+#include <stdio.h>
 
 int main() {
     char Name[ 50 ] ;
@@ -7,7 +7,7 @@ int main() {
     scanf( "%s", &Name ) ;
     printf( "Enter your age: " ) ;
     scanf( "%d", &Age ) ;
-    print( "- - - - - -\n" ) ;
+    printf( "- - - - - -\n" ) ;
     printf( "Hello %s \n", Name ) ; //TODO: #14 Say hello to user.
     printf( "Age = %d\n", Age ) ; //TODO: #15 display user their age number plus 1.
     
