@@ -3,15 +3,14 @@
 int main() {
     char name[ 50 ] ;
     int age ;
-
+  
     printf( "Enter your name: " ) ;
     scanf( "%s", name ) ;
-
+   
     printf( "Enter your age: " ) ;
     scanf( "%d", &age ) ;
 
     printf( "- - - - - -\n" ) ;
-
     printf( "Hello %s\n", name ) ;
     printf( "Age = %d\n", age ) ;
 
