@@ -24,14 +24,14 @@ int main() {
             while( score > 0  ) {
                 printf( "Guess the winning number (%d-%d): ", min , max ) ;
                 scanf( "%d", &guess ) ;
-                if( guess < 1 || guess > 100 ) {
+                if( guess < 1 && guess > 100 ) {
                     printf( "Your guess is out of the current bounds (%d-%d)! Try again. \n", min , max ) ;
                     continue ;
                 }//end if
 
                 if( guess == number ) {
-                    printf( "That is correct! The winning number is %d. \n", guess ) ;
-                    printf( "Score this game: %d \n", score ) ;
+                    printf( "That is correct! The winning number is %d.\n", guess ) ;
+                    printf( "Score this game: %d\n", score ) ;
                     break ;
                 } else {
                     score -= 10 ;
@@ -40,19 +40,21 @@ int main() {
                         printf( "The correct number is : %d. \n", number ) ;
                         break ;
                     }//end if
+                    
                     if( guess < number ) {
                         if( guess > min ) {
                             min = guess + 1 ;
-                        }
+                        }//end if
+                        
                         printf( "Sorry, the winning number is HIGHER than %d. (Score=%d) \n", guess , score ) ;
                     } else {
                         if( guess < max ) {
                             max = guess -1 ;
-                        }
+                        }//end if
                         printf( "Sorry, the winning number is LOWER than %d. (Score=%d)\n", guess , score ) ;
                     }//end if
                 }//end if
-            }//end while 
+            }//end while
             printf( "Do you want to play game (1=play, -1=exit) : \n" ) ;
             scanf( "%d", &playAgain ) ;
         }while( playAgain == 1 ) ;
