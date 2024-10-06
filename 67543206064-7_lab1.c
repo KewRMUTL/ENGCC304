@@ -5,14 +5,16 @@ int main() {
     int age ;
 
     printf( "Enter your name: " ) ;
-    scanf( "%49s", name ) ;
+    scanf( "%s", name ) ;
+
     printf( "Enter your age: " ) ;
     scanf( "%d", &age ) ;
 
     printf( "- - - - - -\n" ) ;
+
     printf( "Hello %s\n", name ) ;
     printf( "Age = %d\n", age ) ;
 
     return 0 ;
-
+    
 }//end function
