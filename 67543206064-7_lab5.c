@@ -1,28 +1,32 @@
 #include <stdio.h>
 
 int main() {
-    int score ;
-
+    
+    int score = 0 ;
     printf( "Enter score: " ) ;
-    scanf( "%d", &score ) ;
-
-    if ( score >= 80 && score <= 100 ) {
-        printf( "A !\n" ) ;
-    } else if ( score >= 75 && score < 80 ) {
-        printf( "B+ !\n" ) ;
-    } else if ( score >= 70 && score < 75 ) {
-        printf( "B !\n" ) ; 
-    } else if ( score >= 65 && score < 70 ) {
-        printf(c"C+ !\n" ) ;
-    } else if ( score >= 60 && score < 65 ) {
-        printf(v"D+ !\n" ) ;
-    } else if ( score >= 50 && score < 60 ) {
-        printf( "D !\n" ) ;
-    } else if ( score >= 0 && score < 50 ) {
-        printf( "F !\n" ) ;
+    if( scanf ("%d", &score) != 1 ) {
+        printf( "Please enter number only." ) ;
+        return 1 ;
+    }//end if
+    
+    if( score >= 80 ) {
+        printf( "A!" ) ;
+    } else if( score >= 75 && score < 80 ) {
+        printf( "B+!" ) ;
+    } else if( score >= 70 && score < 75 ) {
+        printf( "B!" ) ;
+    } else if( score >= 65 && score < 70 ) {
+        printf( "C+!" ) ;
+    } else if( score >= 60 && score < 65 ) {
+        printf( "C!" ) ;
+    } else if( score >= 55 && score < 60 ) {
+        printf( "D+!" ) ;
+    } else if( score >= 50 && score < 55 ) {
+        printf( "D!" ) ;
     } else {
-        printf( "Invalid score!\n" ) ;
+        printf( "F!" ) ;
     }//end if
 
     return 0 ;
+
 }//end function
