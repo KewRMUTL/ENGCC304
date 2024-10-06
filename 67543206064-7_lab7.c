@@ -45,7 +45,7 @@ int main() {
             }//end if
         }//end while
     }//end while
-
-    printf( "Thank you for playing!\n" ) ;
+    
     return 0 ;
+    
 }//end function
